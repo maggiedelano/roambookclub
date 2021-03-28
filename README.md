@@ -1,5 +1,10 @@
 # roambookclub
-Scripts for Roam Book Club. Right now this just has the script to check for zettels that are missing. Can easily be extended to zettel questions as well.
+Scripts for Roam Book Club. Right now this has two scripts:
+
+1. one to check for pages (zettels) that are missing from a zettel index. It gets the page titles that have blocks that have Page Type:: Zettel in them. Can easily be extended to zettel questions as well.
+2. one to populate the zettel index with (X page refs) after each zettel.
+
+These are most easily used with 42SmartBlock buttons. To use, create a new smartblock (#42SmartBlock Your SmartBlock Name). Underneath the smart block name, type <%J: %>. Then, go back after the colon and type ``` to insert a javascript code block. Paste the code inside the code block. You can also make a button using {{BUTTON TITLE:42SmartBlock:Your SmartBlock Name:42RemoveButton=false}}.
 
 ## Resources / References
 
