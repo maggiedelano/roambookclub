@@ -1,7 +1,7 @@
 # roambookclub
 Scripts for Roam Book Club and other Zettelkasten use. Right now this has three scripts:
 
-1. **checkForMissingZettels.js:** check for pages (zettels) that are missing from a zettel index. It gets the page titles that have blocks that have Page Type:: Zettel in them. Can easily be extended to zettel questions as well.
+1. **checkForMissingZettels.js:** check for pages (zettels) that are missing from a zettel index. It gets the page titles that have blocks that have Page Type:: #Zettel in them. Can easily be extended to zettel questions as well.
 2. **getMissingNotes.js:** similar to checkForMissingZettels.js, but works based on a prefix in the note's page title instead (for use with namespaced zettelkasten e.g. [[Seedling/My Note]]).
 3. **addPageRefsToIndex:** populate the zettel index with (X page refs) after each zettel. (Caution: this smartblock overwrites the contents of blocks on the page. Backup your index page before you call it the first time, or test it on a different page, just in case.)
 
