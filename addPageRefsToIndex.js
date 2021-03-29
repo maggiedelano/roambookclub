@@ -32,11 +32,11 @@ function findPageLinks(string,startIndex = 0){
 
 	for (j = startIndex; j < string.length - 1; j++) {
 
-    //console.log(j);
+    //console.log("Index: " + j + " " + testString[j]);
 
 		// check for open brackets [[
 		if (string[j] == '[' && string[j+1] == '[') {
-			//console.log("Found open brackets at " + j);
+			//console.log("Found open brackets at " + j + string[j]);
 
 			if (!searching){
 				startIndex = j + 2; // get inside of the text
@@ -47,7 +47,6 @@ function findPageLinks(string,startIndex = 0){
 				// openBrackets increment by 1
 				openBrackets++;
         //console.log("open brackets = "+ openBrackets);
-				continue;
 			}
       j++; // skip following [
 		}
@@ -62,7 +61,6 @@ function findPageLinks(string,startIndex = 0){
 					openBrackets--;
           j++;
           //console.log("open brackets = " + openBrackets);
-					continue;	
 				}
 
 				// otherwise, we found a match!
@@ -70,10 +68,11 @@ function findPageLinks(string,startIndex = 0){
 
           //console.log(string.substring(startIndex,j));
           searching = false;
+          j++;
           //console.log("Looking for next match");
           // ignore tags...
           if (!(string[startIndex - 3] == "#")){
-            resultArray.push(string.substring(startIndex,j));
+            resultArray.push(string.substring(startIndex,j-1));
           }
 				}
 			}
