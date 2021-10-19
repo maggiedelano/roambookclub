@@ -1,6 +1,8 @@
 // finds notes missing from an index based on their starting prefix e.g. [[Evergreen]]/
 
-function getMissingNotes(pagePrefix){
+return getMissingNotes("Q/","questions");
+
+function getMissingNotes(pagePrefix, indexPage){
   let ancestor = `[ 
   [(ancestor ?child ?parent)
    [?parent :block/children ?child]]
@@ -25,7 +27,7 @@ var missingPages = window.roamAlphaAPI.q(`
     [?page :node/title ?pages]
     (not (ancestor ?container_block ?container_page)
          [?container_block :block/refs ?page])
-]`, ancestor, "Zettel Index",buddingPages.map((data, index) => {return `${data[0]}`}));
+]`, ancestor, indexPage,allPages.map((data, index) => {return `${data[0]}`}));
   
 return missingPages.map((data, index) => {return `[[${data[0]}]]`}).join('\n');
 }
