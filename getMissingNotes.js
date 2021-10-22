@@ -29,5 +29,5 @@ var missingPages = window.roamAlphaAPI.q(`
          [?container_block :block/refs ?page])
 ]`, ancestor, indexPage,allPages.map((data, index) => {return `${data[0]}`}));
   
-return missingPages.map((data, index) => {return `[[${data[0]}]]`}).join('\n');
+return missingPages.map((data, index) => {return `[[${data[0]}]]`});
 }
